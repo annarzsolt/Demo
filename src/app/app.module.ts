@@ -12,6 +12,8 @@ import { ProjectsService } from './projects/services/projects.service';
 import { MainMenuService } from './main-menu/services/main-menu.service';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import { OrderByPipe } from './shared/pipes/order-by.pipe';
+import { ProjectComponent } from './project/project.component';
+import { ProjectService } from './project/services/project.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { OrderByPipe } from './shared/pipes/order-by.pipe';
     HomeComponent,
     MainMenuComponent,
     FilterPipe,
-    OrderByPipe
+    OrderByPipe,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { OrderByPipe } from './shared/pipes/order-by.pipe';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProjectsService, MainMenuService],
+  providers: [ProjectsService, MainMenuService, ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

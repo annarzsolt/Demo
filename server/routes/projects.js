@@ -12,7 +12,7 @@ var serverLog = function (req) {
 // SHOW LIST OF USERS
 app.get('/', function (req, res, next) {
 	req.getConnection(function (error, conn) {
-		conn.query('SELECT * FROM pm_projects ORDER BY id DESC', function (err, rows, fields) {
+		conn.query('SELECT * FROM pm_projects ORDER BY id ASC', function (err, rows, fields) {
 			//if(err) throw err
 			if (err) {
 				req.flash('error', err)

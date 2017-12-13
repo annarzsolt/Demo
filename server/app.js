@@ -37,7 +37,8 @@ app.set('view engine', 'ejs')
  * import routes/users.js
  */
 var index = require('./routes/index')
-var users = require('./routes/projects')
+var projects = require('./routes/projects')
+var project = require('./routes/project')
 
 
 /**
@@ -111,7 +112,8 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', index)
-app.use('/api/projects', users)
+app.use('/api/projects', projects)
+app.use('/api/project', project)
 
 app.listen(3000, function () {
 	console.log('Server running at port 3000: http://127.0.0.1:3000')

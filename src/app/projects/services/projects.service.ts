@@ -26,9 +26,9 @@ export class ProjectsService {
     };
   }
 
-  /** Log a HeroService message with the MessageService */
+  /** Log a ProjectsService message with the MessageService */
   private log(message: string) {
-    console.log('HeroService: ' + message);
+    console.log('ProjectsService: ' + message);
   }
 
   private projectsUrl = 'http://localhost:3000/api/projects';
