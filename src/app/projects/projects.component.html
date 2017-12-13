@@ -1,0 +1,59 @@
+<!-- <div>
+  <button class="btn btn-primary">Add New Project</button>
+</div> -->
+<table class='table table-hover'>
+  <thead>
+    <th (click)="changeOrderByKey('id')">
+      <div class="d-flex flex-row align-items-center link">
+        <span class="expand">#</span>
+        <i class="fa" [ngClass]="{'fa-angle-down':!orderByReverseDefault, 'fa-angle-up':orderByReverseDefault}" aria-hidden="true"></i>
+      </div>
+    </th>
+    <th (click)="changeOrderByKey('project_name')">
+      <div class="d-flex flex-row align-items-center link">
+        <span class="expand">Project Name</span>
+        <i class="fa" [ngClass]="{'fa-angle-down':!orderByReverseDefault, 'fa-angle-up':orderByReverseDefault}" aria-hidden="true"></i>
+      </div>
+    </th>
+    <th (click)="changeOrderByKey('created_by')">
+      <div class="d-flex flex-row align-items-center link">
+        <span class="expand">Created By</span>
+        <i class="fa" [ngClass]="{'fa-angle-down':!orderByReverseDefault, 'fa-angle-up':orderByReverseDefault}" aria-hidden="true"></i>
+      </div>
+    </th>
+    <th (click)="changeOrderByKey('created_time')">
+      <div class="d-flex flex-row align-items-center link">
+        <span class="expand">Created Time</span>
+        <i class="fa" [ngClass]="{'fa-angle-down':!orderByReverseDefault, 'fa-angle-up':orderByReverseDefault}" aria-hidden="true"></i>
+      </div>
+    </th>
+    <th (click)="changeOrderByKey('active')">
+      <div class="d-flex flex-row align-items-center link">
+        <span class="expand">Active</span>
+        <i class="fa" [ngClass]="{'fa-angle-down':!orderByReverseDefault, 'fa-angle-up':orderByReverseDefault}" aria-hidden="true"></i>
+      </div>
+    </th>
+  </thead>
+  <thead>
+    <th></th>
+    <th>
+      <input [(ngModel)]="projectName" class="form-control" type="text">
+    </th>
+    <th>
+      <input [(ngModel)]="createdBy" class="form-control" type="text">
+    </th>
+    <th>
+    </th>
+    <th>
+    </th>
+  </thead>
+  <tbody>
+    <tr [ngClass]="{'table-disabled': project.active==0 }" *ngFor="let project of projects | filter:{project_name: projectName, created_by: createdBy, active: active} | orderBy:orderByKey:orderByReverse">
+      <td>{{project.id}}</td>
+      <td>{{project.project_name}}</td>
+      <td>{{project.created_by}}</td>
+      <td>{{project.created_time | date}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
