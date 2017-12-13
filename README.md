@@ -14,7 +14,7 @@
 ## App
 
  - Open `cmd`
- - Go to reposytory root
+ - Go to repository root
  - Run `npm install`
  - Run `npm start`
 
@@ -28,4 +28,3 @@
  - Create a new database, name is `project-manager`
  - Import test data. (`~/server/data/`)
 
- 
